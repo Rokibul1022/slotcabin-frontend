@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SlotCabin.org</title>
+    <meta name="description" content="Frequently Asked Questions about SlotCabin.org - Get answers to common questions about our social gaming platform.">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="../games/index.html" class="nav-link">Games</a>
+                <a href="../about/index.html" class="nav-link">About</a>
+                <a href="../leaderboard/index.html" class="nav-link">Leaderboard</a>
+                <a href="../faq/index.html" class="nav-link">FAQ</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                    <a href="../profile/index.html" class="btn-secondary">Dashboard</a>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+                <div id="authButtons" class="auth-buttons">
+                    <a href="../login/index.html" class="btn-secondary">Login</a>
+                    <a href="../login/index.html" class="btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>❓ Frequently Asked Questions</h1>
+            <p>Find answers to common questions about SlotCabin.org</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Is SlotCabin really free to play?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! SlotCabin is 100% free to play. You get 5,000 virtual coins when you register, and you can earn more by playing games. No real money is ever required or involved.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How do I earn more coins?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can earn coins by playing games, winning challenges, completing daily tasks, and participating in special events. The more you play, the more you earn!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Can I play on my mobile device?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! SlotCabin is fully optimized for mobile devices, tablets, and desktops. Play anywhere, anytime with the same great experience across all devices.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Is my personal information safe?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your privacy and security are our top priorities. We use advanced encryption, never ask for financial information, and follow strict data protection guidelines.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>What happens if I run out of coins?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Don't worry! You can earn more coins through daily bonuses, special promotions, or by participating in community events. We ensure everyone can keep playing!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How do leaderboards work?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Leaderboards rank players based on their total coins earned, games won, and overall performance. Compete with players worldwide and climb to the top!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Are new games added regularly?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We regularly add new games, features, and improvements based on player feedback. Check back often for exciting new content and gaming experiences.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Can I play with friends?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! SlotCabin is all about social gaming. Invite friends, compete on leaderboards, share achievements, and enjoy the community aspect of gaming together.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Do I need to download anything?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No downloads required! SlotCabin runs entirely in your web browser. Simply visit our website and start playing instantly on any device.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>How do I contact support?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our support team is available 24/7! You can reach us through our contact page, email us at info@slotcabin.org, or call +1 (555) 123-4567.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Can I change my username?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can change your username from your profile dashboard. Simply log in, go to your profile settings, and update your display name.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Are there age restrictions?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you must be 18 years or older to use SlotCabin. We verify age during registration to ensure compliance with gaming regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

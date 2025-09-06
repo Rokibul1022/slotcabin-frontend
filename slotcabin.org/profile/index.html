@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile — SlotCabin.org Social Gaming Dashboard</title>
+    <meta name="description" content="Manage your SlotCabin.org profile, view your virtual coin balance, game statistics, and account settings. Track your progress on the social gaming platform.">
+    <meta name="keywords" content="user profile, gaming dashboard, virtual coins, game stats, slotcabin account, player statistics, social gaming profile">
+    <link rel="canonical" href="https://slotcabin.org/profile/">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <div class="nav-menu">
+                <a href="../games/index.html" class="nav-link">Games</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link active">Dashboard</a>
+                <div id="userInfo" class="user-info">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-circle" id="avatarCircle">
+                        <span id="avatarInitials">U</span>
+                    </div>
+                    <button class="change-avatar-btn" onclick="changeAvatar()">Change Avatar</button>
+                </div>
+                <div class="profile-info">
+                    <h1 id="profileUsername">Username</h1>
+                    <p id="profileEmail">user@example.com</p>
+                    <p class="member-since">Member since <span id="memberDate">January 2024</span></p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalCoins">5,000</div>
+                        <div class="stat-label">Virtual Coins</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="gamesPlayed">0</div>
+                        <div class="stat-label">Games Played</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalScore">0</div>
+                        <div class="stat-label">Total Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-tabs">
+                    <button class="tab-btn active" onclick="showProfileTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="showProfileTab('settings')">Settings</button>
+                    <button class="tab-btn" onclick="showProfileTab('history')">Game History</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div id="overviewTab" class="profile-tab active">
+                    <div class="tab-content">
+                        <div class="dashboard-actions">
+                            <h3>Dashboard</h3>
+                            <div class="action-grid">
+                                <div class="action-card" onclick="window.location.href='../games/index.html'">
+                                    <div class="action-icon">🎮</div>
+                                    <h4>Play Games</h4>
+                                    <p>Start playing now</p>
+                                </div>
+                                <div class="action-card" onclick="showBuyCoinsModal()">
+                                    <div class="action-icon">💰</div>
+                                    <h4>Add Money</h4>
+                                    <p>Buy virtual coins</p>
+                                </div>
+                                <div class="action-card" onclick="logout()">
+                                    <div class="action-icon">🚪</div>
+                                    <h4>Logout</h4>
+                                    <p>Sign out safely</p>
+                                </div>
+                                <div class="action-card" onclick="showDailyBonus()">
+                                    <div class="action-icon">🎁</div>
+                                    <h4>Daily Bonus</h4>
+                                    <p>Claim free coins</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-activity">
+                            <h3>Recent Activity</h3>
+                            <div id="activityList" class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">🎮</div>
+                                    <div class="activity-details">
+                                        <p>Welcome to SlotCabin.org!</p>
+                                        <span>Account created</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="achievements">
+                            <h3>Achievements</h3>
+                            <div class="achievement-grid">
+                                <div class="achievement-card earned">
+                                    <div class="achievement-icon">🎉</div>
+                                    <h4>Welcome Bonus</h4>
+                                    <p>Received 5,000 free coins</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">🎯</div>
+                                    <h4>First Game</h4>
+                                    <p>Play your first game</p>
+                                </div>
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">🏆</div>
+                                    <h4>High Roller</h4>
+                                    <p>Reach 10,000 coins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settingsTab" class="profile-tab">
+                    <div class="tab-content">
+                        <div class="settings-section">
+                            <h3>Account Settings</h3>
+                            <form id="profileSettingsForm">
+                                <div class="form-group">
+                                    <label for="settingsUsername">Username</label>
+                                    <input type="text" id="settingsUsername" name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settingsEmail">Email</label>
+                                    <input type="email" id="settingsEmail" name="email">
+                                </div>
+                                <button type="submit" class="btn-primary">Update Profile</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-section">
+                            <h3>Preferences</h3>
+                            <div class="preference-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="soundEnabled" checked>
+                                    <span>Enable sound effects</span>
+                                </label>
+                            </div>
+                            <div class="preference-item">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="notificationsEnabled" checked>
+                                    <span>Enable notifications</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-section danger-zone">
+                            <h3>Danger Zone</h3>
+                            <button onclick="deleteAccount()" class="btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div id="historyTab" class="profile-tab">
+                    <div class="tab-content">
+                        <div class="history-section">
+                            <h3>Game History</h3>
+                            <div id="gameHistory" class="history-list">
+                                <div class="history-empty">
+                                    <p>No games played yet. <a href="../games/index.html">Start playing!</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Coins Modal -->
+    <div id="buyCoinsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyCoinsModal')">&times;</span>
+            <h2>Buy Virtual Coins</h2>
+            <div class="coin-packages">
+                <div class="coin-package" onclick="buyCoins(1000)">
+                    <h3>1,000 Coins</h3>
+                    <p>Starter Package</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+                <div class="coin-package" onclick="buyCoins(5000)">
+                    <h3>5,000 Coins</h3>
+                    <p>Popular Choice</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+                <div class="coin-package" onclick="buyCoins(10000)">
+                    <h3>10,000 Coins</h3>
+                    <p>Best Value</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+            </div>
+            <p class="disclaimer">*Virtual coins for entertainment only. No real money value.</p>
+        </div>
+    </div>
+
+    <!-- Daily Bonus Modal -->
+    <div id="dailyBonusModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('dailyBonusModal')">&times;</span>
+            <h2>Daily Bonus</h2>
+            <div class="bonus-content">
+                <div class="bonus-icon">🎁</div>
+                <h3>Congratulations!</h3>
+                <p>You received <span class="bonus-amount">500</span> free coins!</p>
+                <button onclick="claimDailyBonus()" class="btn-primary">Claim Bonus</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

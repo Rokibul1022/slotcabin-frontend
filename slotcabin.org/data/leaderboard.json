@@ -1,0 +1,72 @@
+[
+  {
+    "rank": 1,
+    "username": "DragonSlayer99",
+    "score": 125000,
+    "gamesPlayed": 45,
+    "joinDate": "2024-01-15"
+  },
+  {
+    "rank": 2,
+    "username": "LuckyCharm",
+    "score": 118500,
+    "gamesPlayed": 38,
+    "joinDate": "2024-01-20"
+  },
+  {
+    "rank": 3,
+    "username": "GoldRush",
+    "score": 112300,
+    "gamesPlayed": 42,
+    "joinDate": "2024-01-18"
+  },
+  {
+    "rank": 4,
+    "username": "MysticWins",
+    "score": 108900,
+    "gamesPlayed": 35,
+    "joinDate": "2024-01-25"
+  },
+  {
+    "rank": 5,
+    "username": "CasinoKing",
+    "score": 105600,
+    "gamesPlayed": 40,
+    "joinDate": "2024-01-12"
+  },
+  {
+    "rank": 6,
+    "username": "SlotMaster",
+    "score": 102400,
+    "gamesPlayed": 33,
+    "joinDate": "2024-01-28"
+  },
+  {
+    "rank": 7,
+    "username": "WinnerTakesAll",
+    "score": 98700,
+    "gamesPlayed": 37,
+    "joinDate": "2024-01-22"
+  },
+  {
+    "rank": 8,
+    "username": "JackpotHunter",
+    "score": 95200,
+    "gamesPlayed": 31,
+    "joinDate": "2024-01-30"
+  },
+  {
+    "rank": 9,
+    "username": "SpinDoctor",
+    "score": 91800,
+    "gamesPlayed": 29,
+    "joinDate": "2024-02-01"
+  },
+  {
+    "rank": 10,
+    "username": "LuckyStrike",
+    "score": 88500,
+    "gamesPlayed": 26,
+    "joinDate": "2024-02-03"
+  }
+]

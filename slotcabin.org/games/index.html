@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Hub — SlotCabin.org Social Gaming Platform</title>
+    <meta name="description" content="Explore 10+ exciting social games at SlotCabin.org. Play slots, table games, and more with virtual coins. No real money gambling, just pure entertainment.">
+    <meta name="keywords" content="social games, slot games, virtual casino, hacksaw gaming, pragmatic play, nolimit city, evolution gaming, peter sons, free games, entertainment">
+    <link rel="canonical" href="https://slotcabin.org/games/">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Games</a>
+                <a href="../about/index.html" class="nav-link">About</a>
+                <a href="../leaderboard/index.html" class="nav-link">Leaderboard</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                    <a href="../profile/index.html" class="btn-secondary">Dashboard</a>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+                <div id="authButtons" class="auth-buttons">
+                    <a href="../login/index.html" class="btn-secondary">Login</a>
+                    <a href="../login/index.html" class="btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Games Header -->
+    <section class="games-header">
+        <div class="container">
+            <h1>Game Collection</h1>
+            <p>Choose from our exciting selection of social games</p>
+        </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="games-section">
+        <div class="container">
+            <div class="games-grid" id="gamesGrid">
+                <!-- Games will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <h2>Top Players</h2>
+            <div class="leaderboard" id="leaderboard">
+                <!-- Leaderboard will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content game-modal-content">
+            <span class="close" onclick="closeGameModal()">&times;</span>
+            <div class="game-header">
+                <h2 id="gameTitle">Game Title</h2>
+                <div class="game-controls">
+                    <span id="gameCoins">Coins: 5,000</span>
+                    <button onclick="closeGameModal()" class="btn-secondary">Exit Game</button>
+                </div>
+            </div>
+            <div id="gameContainer" class="game-container">
+                <!-- Game content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Buy Coins Modal -->
+    <div id="buyCoinsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyCoinsModal')">&times;</span>
+            <h2>Buy Virtual Coins</h2>
+            <div class="coin-packages">
+                <div class="coin-package" onclick="buyCoins(1000)">
+                    <h3>1,000 Coins</h3>
+                    <p>Starter Package</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+                <div class="coin-package" onclick="buyCoins(5000)">
+                    <h3>5,000 Coins</h3>
+                    <p>Popular Choice</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+                <div class="coin-package" onclick="buyCoins(10000)">
+                    <h3>10,000 Coins</h3>
+                    <p>Best Value</p>
+                    <button class="btn-primary">Get Coins</button>
+                </div>
+            </div>
+            <p class="disclaimer">*Virtual coins for entertainment only. No real money value.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/games.js"></script>
+</body>
+</html>

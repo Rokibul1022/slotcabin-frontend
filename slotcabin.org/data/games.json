@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Mystic Fortune",
+    "provider": "Hacksaw Gaming",
+    "description": "Ancient mysteries await in this magical slot adventure",
+    "icon": "🔮",
+    "url": "about:blank",
+    "category": "slots"
+  },
+  {
+    "id": 2,
+    "name": "Dragon's Gold",
+    "provider": "Pragmatic Play",
+    "description": "Collect treasures from the dragon's lair",
+    "icon": "🐉",
+    "url": "about:blank",
+    "category": "slots"
+  },
+  {
+    "id": 3,
+    "name": "Spin the Wheel",
+    "provider": "Nolimit City",
+    "description": "Spin the wheel of fortune for big wins",
+    "icon": "🎡",
+    "url": "about:blank",
+    "category": "wheel"
+  },
+  {
+    "id": 4,
+    "name": "Ocean's Treasure",
+    "provider": "Evolution Gaming",
+    "description": "Dive deep for underwater riches",
+    "icon": "🌊",
+    "url": "about:blank",
+    "category": "table"
+  },
+  {
+    "id": 5,
+    "name": "Wild West Gold",
+    "provider": "Peter & Sons",
+    "description": "Strike it rich in the old frontier",
+    "icon": "🤠",
+    "url": "about:blank",
+    "category": "slots"
+  },
+  {
+    "id": 6,
+    "name": "Space Adventure",
+    "provider": "Hacksaw Gaming",
+    "description": "Explore galaxies for cosmic rewards",
+    "icon": "🚀",
+    "url": "about:blank",
+    "category": "slots"
+  },
+  {
+    "id": 7,
+    "name": "Fruit Fiesta",
+    "provider": "Pragmatic Play",
+    "description": "Classic fruit machine with modern twists",
+    "icon": "🍎",
+    "url": "about:blank",
+    "category": "classic"
+  },
+  {
+    "id": 8,
+    "name": "Pirate's Quest",
+    "provider": "Nolimit City",
+    "description": "Sail the seven seas for buried treasure",
+    "icon": "🏴☠️",
+    "url": "about:blank",
+    "category": "adventure"
+  },
+  {
+    "id": 9,
+    "name": "Egyptian Secrets",
+    "provider": "Evolution Gaming",
+    "description": "Uncover ancient pharaoh's hidden wealth",
+    "icon": "🏺",
+    "url": "about:blank",
+    "category": "slots"
+  },
+  {
+    "id": 10,
+    "name": "Viking Legends",
+    "provider": "Peter & Sons",
+    "description": "Join Norse warriors on epic raids",
+    "icon": "⚔️",
+    "url": "about:blank",
+    "category": "adventure"
+  },
+  {
+    "id": 11,
+    "name": "Jungle Explorer",
+    "provider": "Hacksaw Gaming",
+    "description": "Navigate through dangerous jungle paths",
+    "icon": "🌴",
+    "url": "about:blank",
+    "category": "adventure"
+  },
+  {
+    "id": 12,
+    "name": "Crystal Caverns",
+    "provider": "Pragmatic Play",
+    "description": "Mine precious gems in underground caves",
+    "icon": "💎",
+    "url": "about:blank",
+    "category": "slots"
+  }
+]

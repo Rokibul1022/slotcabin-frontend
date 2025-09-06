@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlotCabin.org — Play Free Social Games & Earn Coins</title>
+    <meta name="description" content="Join SlotCabin.org, the ultimate social gaming hub. Register today and get 5,000 free virtual coins. No real money, just fun and competition.">
+    <meta name="keywords" content="slotcabin, social gaming, free games, play for fun, virtual coins, leaderboard, online games, register bonus, entertainment platform, rewards">
+    <link rel="canonical" href="https://slotcabin.org/">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Age Verification Modal -->
+    <div id="ageModal" class="modal">
+        <div class="modal-content">
+            <h2>Age Verification</h2>
+            <p>You must be 18 or older to access this site.</p>
+            <div class="modal-buttons">
+                <button onclick="verifyAge(true)" class="btn-primary">I am 18+</button>
+                <button onclick="verifyAge(false)" class="btn-secondary">Under 18</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" class="cookie-banner">
+        <p>We use cookies to enhance your experience. <a href="cookies/index.html">Learn more</a></p>
+        <button onclick="acceptCookies()" class="btn-primary">Accept</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./" class="nav-logo">
+                <img src="assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="games/index.html" class="nav-link">Games</a>
+                <a href="about/index.html" class="nav-link">About</a>
+                <a href="leaderboard/index.html" class="nav-link">Leaderboard</a>
+                <a href="faq/index.html" class="nav-link">FAQ</a>
+                <a href="contact/index.html" class="nav-link">Contact</a>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                    <a href="profile/index.html" class="btn-secondary">Dashboard</a>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+                <div id="authButtons" class="auth-buttons">
+                    <a href="login/index.html" class="btn-secondary">Login</a>
+                    <a href="login/index.html" class="btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+        <!-- Guest Hero -->
+        <div id="guestHero" class="hero-content">
+            <h1 class="typewriter">Welcome to SlotCabin</h1>
+            <p class="hero-subtitle bounce-in">The Ultimate Social Gaming Experience</p>
+            <div class="hero-cta">
+                <button onclick="showRegisterModal()" class="btn-hero pulse-scale">Register now to get 5,000 points for free</button>
+                <p class="limited-offer slide-left">Limited-time offer • Join now and unlock exclusive features</p>
+            </div>
+        </div>
+        
+        <!-- Logged In Hero -->
+        <div id="loggedInHero" class="hero-content logged-in" style="display: none;">
+            <h1 class="slide-up gradient-text">Ready to Play?</h1>
+            <p class="hero-subtitle fade-in">Your gaming adventure awaits</p>
+            <div class="hero-stats">
+                <div class="stat-item counter-up">
+                    <span class="stat-number" id="heroCoins">5,000</span>
+                    <span class="stat-label">Coins</span>
+                </div>
+                <div class="stat-item counter-up">
+                    <span class="stat-number" id="heroGames">0</span>
+                    <span class="stat-label">Games Played</span>
+                </div>
+            </div>
+            <button onclick="window.location.href='games/index.html'" class="btn-hero hover-lift">Start Playing Now</button>
+        </div>
+        <div class="hero-bg animated-bg"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1">🎮</div>
+            <div class="shape shape-2">🎲</div>
+            <div class="shape shape-3">🎯</div>
+            <div class="shape shape-4">⭐</div>
+            <div class="shape shape-5">💎</div>
+            <div class="shape shape-6">🏆</div>
+        </div>
+        <div class="matrix-rain"></div>
+    </section>
+    
+    <!-- Featured Games Section -->
+    <section id="featuredGames" class="featured-games">
+        <div class="container">
+            <h2>Featured Games</h2>
+        </div>
+        <div class="games-slider">
+            <div class="slider-track" id="gamesSlider">
+                <!-- Games will be loaded here -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="slider-controls">
+                <button class="slider-btn prev" onclick="slideGames(-1)">←</button>
+                <div class="slider-dots" id="sliderDots"></div>
+                <button class="slider-btn next" onclick="slideGames(1)">→</button>
+            </div>
+            <div class="play-more-section">
+                <button onclick="window.location.href='games/index.html'" class="btn-play-more">Play More Games</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Played Games Section -->
+    <section class="most-played-games">
+        <div class="container">
+            <h2>🔥 Most Played Games</h2>
+            <p class="most-played-subtitle">Join thousands of players enjoying these community favorites!</p>
+            <div class="most-played-grid">
+                <div class="most-played-card" onclick="playMostPlayedGame('neon-slots')">
+                    <div class="most-played-image">
+                        <div class="game-icon-large">🌟</div>
+                        <div class="play-count">2.5M+ plays</div>
+                        <div class="popularity-badge">🔥 HOT</div>
+                    </div>
+                    <div class="most-played-info">
+                        <h3>Neon Slots Deluxe</h3>
+                        <p>The ultimate slot experience with stunning neon graphics and massive jackpots!</p>
+                        <div class="game-stats">
+                            <span class="stat">⭐ 4.9/5</span>
+                            <span class="stat">🎯 95% RTP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="most-played-card" onclick="playMostPlayedGame('mega-wheel')">
+                    <div class="most-played-image">
+                        <div class="game-icon-large">🎡</div>
+                        <div class="play-count">1.8M+ plays</div>
+                        <div class="popularity-badge">⚡ TRENDING</div>
+                    </div>
+                    <div class="most-played-info">
+                        <h3>Mega Fortune Wheel</h3>
+                        <p>Spin the wheel of fortune and win amazing prizes in this thrilling game!</p>
+                        <div class="game-stats">
+                            <span class="stat">⭐ 4.8/5</span>
+                            <span class="stat">🎯 92% RTP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="most-played-card" onclick="playMostPlayedGame('crystal-dice')">
+                    <div class="most-played-image">
+                        <div class="game-icon-large">💎</div>
+                        <div class="play-count">1.2M+ plays</div>
+                        <div class="popularity-badge">👑 PREMIUM</div>
+                    </div>
+                    <div class="most-played-info">
+                        <h3>Crystal Dice Master</h3>
+                        <p>Roll the crystal dice and unlock mystical rewards in this enchanting adventure!</p>
+                        <div class="game-stats">
+                            <span class="stat">⭐ 4.7/5</span>
+                            <span class="stat">🎯 90% RTP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="home-leaderboard">
+        <div class="container">
+            <h2>🏆 Top Players</h2>
+            <p class="leaderboard-description">Compete with the best players and climb your way to the top! Earn coins, win games, and show off your skills.</p>
+            <div class="leaderboard-grid" id="homeLeaderboard">
+                <!-- Leaderboard will be loaded here -->
+            </div>
+            <div class="leaderboard-cta">
+                <p>Think you can make it to the top?</p>
+                <a href="leaderboard/index.html" class="btn-leaderboard">View Full Leaderboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="home-about">
+        <div class="container">
+            <h2>🎮 About SlotCabin</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Pure Entertainment, Zero Risk</h3>
+                    <p>SlotCabin.org is your ultimate destination for social gaming excitement! We've created a safe, fun environment where you can enjoy all the thrills of casino-style games without any real money involved.</p>
+                    
+                    <h3>How It Works</h3>
+                    <p>Register for free and receive 5,000 virtual coins to start your gaming journey. Play slots, dice games, spin the wheel, and compete with players worldwide. Climb the leaderboards, earn achievements, and show off your skills!</p>
+                    
+                    <h3>Community First</h3>
+                    <p>Join thousands of players in our vibrant gaming community. Share strategies, celebrate wins, and make new friends while enjoying our ever-growing collection of games.</p>
+                    
+                    <h3>Safe & Secure</h3>
+                    <p>Your privacy and security are our top priorities. We use advanced encryption and never ask for financial information. Play with confidence knowing your data is protected.</p>
+                    
+                    <h3>Always Evolving</h3>
+                    <p>We're constantly adding new games, features, and improvements based on player feedback. Regular updates ensure fresh content and enhanced gaming experiences for our community.</p>
+                    
+                    <h3>Mobile Friendly</h3>
+                    <p>Play anywhere, anytime! Our platform is fully optimized for mobile devices, tablets, and desktops. Seamless gaming experience across all your devices.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number">50,000+</div>
+                        <div class="stat-label">Active Players</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Exciting Games</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Games Played</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎊</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Fun Guaranteed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>✨ Why Choose SlotCabin</h2>
+            <p class="features-subtitle">Experience the ultimate social gaming platform designed for pure entertainment and endless fun!</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% Safe Gaming</h3>
+                    <p>No real money, no risk! Enjoy all the excitement of casino games with complete peace of mind using virtual coins only.</p>
+                    <div class="feature-highlight">Risk-Free Fun</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Competitive Leaderboards</h3>
+                    <p>Climb the ranks, earn achievements, and showcase your gaming skills. Compete with players worldwide for ultimate bragging rights!</p>
+                    <div class="feature-highlight">Global Competition</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3>Diverse Game Collection</h3>
+                    <p>From classic slots to modern wheel games, dice challenges to adventure quests. New games added regularly to keep the excitement fresh!</p>
+                    <div class="feature-highlight">Always Growing</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Vibrant Community</h3>
+                    <p>Join thousands of active players, share strategies, celebrate wins, and make lasting friendships in our welcoming gaming community.</p>
+                    <div class="feature-highlight">50K+ Players</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Instant Play</h3>
+                    <p>No downloads, no installations! Jump straight into the action with our browser-based games. Play instantly on any device, anywhere.</p>
+                    <div class="feature-highlight">Zero Wait Time</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is always here to help. Get assistance, report issues, or ask questions anytime, day or night.</p>
+                    <div class="feature-highlight">Always Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>💬 What Players Say</h2>
+            <p class="testimonials-subtitle">Real feedback from our amazing gaming community</p>
+            <div class="testimonials-slider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"SlotCabin is absolutely amazing! The games are so addictive and the community is fantastic. I've made so many friends here!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🎮</div>
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Johnson</span>
+                                    <span class="author-title">Top Player • 45,000 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The leaderboard competition keeps me coming back every day. Love climbing the ranks and beating my personal best!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🏆</div>
+                                <div class="author-info">
+                                    <span class="author-name">Mark Rodriguez</span>
+                                    <span class="author-title">Leaderboard Champion • 67,500 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Perfect for casual gaming! No pressure, just pure fun. The variety of games keeps things interesting and exciting."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🎲</div>
+                                <div class="author-info">
+                                    <span class="author-name">Priya Patel</span>
+                                    <span class="author-title">Daily Player • 32,800 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The mobile experience is flawless! I can play anywhere, anytime. Great way to unwind during breaks."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">📱</div>
+                                <div class="author-info">
+                                    <span class="author-name">Alex Chen</span>
+                                    <span class="author-title">Mobile Gamer • 28,900 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Safe, fun, and totally addictive! Love that there's no real money involved. Just pure entertainment at its finest."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🔒</div>
+                                <div class="author-info">
+                                    <span class="author-name">Emma Wilson</span>
+                                    <span class="author-title">Community Member • 41,200 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The graphics and animations are stunning! Every game feels like a premium experience. Highly recommend to all gaming enthusiasts."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🎨</div>
+                                <div class="author-info">
+                                    <span class="author-name">David Kim</span>
+                                    <span class="author-title">Design Lover • 38,750 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Amazing customer support! Had a question and got help within minutes. The team really cares about their players."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">💬</div>
+                                <div class="author-info">
+                                    <span class="author-name">Lisa Martinez</span>
+                                    <span class="author-title">Happy Customer • 52,300 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The wheel game is my absolute favorite! The anticipation and excitement never gets old. Perfect for quick gaming sessions."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🎡</div>
+                                <div class="author-info">
+                                    <span class="author-name">Michael Brown</span>
+                                    <span class="author-title">Wheel Master • 61,800 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Love the social aspect! Made so many friends through the platform. It's more than just games, it's a community."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👫</div>
+                                <div class="author-info">
+                                    <span class="author-name">Jessica Taylor</span>
+                                    <span class="author-title">Social Gamer • 44,900 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The variety of games keeps me coming back daily. Each game has its own unique charm and excitement factor."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🎯</div>
+                                <div class="author-info">
+                                    <span class="author-name">Robert Garcia</span>
+                                    <span class="author-title">Game Explorer • 39,600 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Fantastic platform for stress relief after work. The games are engaging without being overwhelming. Perfect balance!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">😌</div>
+                                <div class="author-info">
+                                    <span class="author-name">Amanda Davis</span>
+                                    <span class="author-title">Stress-Free Player • 47,200 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"The coin system is brilliant! Feels rewarding without any financial pressure. Gaming should always be this fun and safe."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🪙</div>
+                                <div class="author-info">
+                                    <span class="author-name">James Wilson</span>
+                                    <span class="author-title">Coin Collector • 58,400 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"Regular updates and new features keep the platform fresh. The developers really listen to player feedback!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">🔄</div>
+                                <div class="author-info">
+                                    <span class="author-name">Sophie Anderson</span>
+                                    <span class="author-title">Beta Tester • 43,700 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">"</div>
+                            <p>"SlotCabin has become my go-to entertainment platform. Quality games, fair play, and an amazing community atmosphere."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">⭐</div>
+                                <div class="author-info">
+                                    <span class="author-name">Daniel Lee</span>
+                                    <span class="author-title">Platform Advocate • 55,100 Coins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-controls">
+                <button class="testimonial-btn prev" onclick="slideTestimonials(-1)">←</button>
+                <div class="testimonials-dots" id="testimonialsDots"></div>
+                <button class="testimonial-btn next" onclick="slideTestimonials(1)">→</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Join SlotCabin.org</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Username" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Register & Get 5,000 Coins</button>
+            </form>
+            <p>Already have an account? <a href="login/index.html">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="terms/index.html">Terms of Service</a></li>
+                        <li><a href="cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

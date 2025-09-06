@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard — SlotCabin.org Top Players & Rankings</title>
+    <meta name="description" content="Check out the top players and rankings on SlotCabin.org. See who's leading the leaderboard in our social gaming platform.">
+    <meta name="keywords" content="leaderboard, top players, rankings, slotcabin scores, gaming competition, player stats">
+    <link rel="canonical" href="https://slotcabin.org/leaderboard/">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="../games/index.html" class="nav-link">Games</a>
+                <a href="../about/index.html" class="nav-link">About</a>
+                <a href="index.html" class="nav-link active">Leaderboard</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                    <a href="../profile/index.html" class="btn-secondary">Dashboard</a>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+                <div id="authButtons" class="auth-buttons">
+                    <a href="../login/index.html" class="btn-secondary">Login</a>
+                    <a href="../login/index.html" class="btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Leaderboard Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>🏆 Leaderboard</h1>
+            <p>See who's dominating the gaming arena</p>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="leaderboard-grid">
+                <div class="leaderboard-header">
+                    <div class="rank-col">Rank</div>
+                    <div class="player-col">Player</div>
+                    <div class="score-col">Score</div>
+                    <div class="coins-col">Coins</div>
+                </div>
+                <div id="fullLeaderboard" class="leaderboard-list">
+                    <!-- Leaderboard will be loaded here -->
+                </div>
+            </div>
+            <div class="leaderboard-cta">
+                <p>Think you can make it to the top?</p>
+                <button onclick="window.location.href='../login/index.html'" class="btn-primary">Join the Competition</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Load leaderboard data
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFullLeaderboard();
+        });
+
+        function loadFullLeaderboard() {
+            const leaderboardData = [
+                { username: "DragonSlayer99", score: 125000, coins: 15000 },
+                { username: "LuckyCharm", score: 118500, coins: 12500 },
+                { username: "GoldRush", score: 112300, coins: 11000 },
+                { username: "MysticWins", score: 108900, coins: 10500 },
+                { username: "CasinoKing", score: 105600, coins: 9800 },
+                { username: "SlotMaster", score: 102400, coins: 9200 },
+                { username: "WinnerTakesAll", score: 98700, coins: 8900 },
+                { username: "JackpotHunter", score: 95200, coins: 8500 },
+                { username: "SpinDoctor", score: 91800, coins: 8000 },
+                { username: "LuckyStrike", score: 88500, coins: 7500 },
+                { username: "GameMaster", score: 85200, coins: 7200 },
+                { username: "CoinCollector", score: 82100, coins: 6900 },
+                { username: "SlotWizard", score: 79800, coins: 6600 },
+                { username: "BetBoss", score: 77500, coins: 6300 },
+                { username: "WinStreak", score: 75200, coins: 6000 },
+                { username: "LuckyPlayer", score: 72900, coins: 5700 },
+                { username: "GameChamp", score: 70600, coins: 5400 },
+                { username: "SpinKing", score: 68300, coins: 5100 },
+                { username: "CoinMaster", score: 66000, coins: 4800 },
+                { username: "SlotHero", score: 63700, coins: 4500 }
+            ];
+            
+            const leaderboardEl = document.getElementById('fullLeaderboard');
+            if (!leaderboardEl) return;
+            
+            leaderboardEl.innerHTML = '';
+            
+            leaderboardData.forEach((player, index) => {
+                const item = document.createElement('div');
+                item.className = `leaderboard-item ${index < 3 ? 'top-3' : ''}`;
+                
+                item.innerHTML = `
+                    <div class="leaderboard-rank">#${index + 1}</div>
+                    <div class="leaderboard-player">${player.username}</div>
+                    <div class="leaderboard-score">${player.score.toLocaleString()}</div>
+                    <div class="leaderboard-coins">${player.coins.toLocaleString()}</div>
+                `;
+                
+                leaderboardEl.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>

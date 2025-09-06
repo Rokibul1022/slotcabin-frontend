@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register — SlotCabin.org Social Gaming</title>
+    <meta name="description" content="Join SlotCabin.org today! Register for free and get 5,000 virtual coins instantly. Login to access your account and continue your gaming adventure.">
+    <meta name="keywords" content="login, register, signup, slotcabin account, free coins, social gaming registration, virtual coins bonus">
+    <link rel="canonical" href="https://slotcabin.org/login/">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <div class="nav-menu">
+                <a href="../games/index.html" class="nav-link">Games</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                <button class="tab-btn" onclick="showTab('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginTab" class="auth-form active">
+                <h2>Welcome Back</h2>
+                <p>Login to continue your gaming adventure</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary auth-btn">Login</button>
+                </form>
+                <p class="auth-switch">Don't have an account? <a href="javascript:void(0)" onclick="showTab('register')">Register here</a></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerTab" class="auth-form">
+                <h2>Join SlotCabin.org</h2>
+                <p>Register now and get 5,000 free coins!</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="regUsername" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="regEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPassword" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="../terms/index.html">Terms of Service</a> and <a href="../privacy/index.html">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-primary auth-btn">Register & Get 5,000 Coins</button>
+                </form>
+                <p class="auth-switch">Already have an account? <a href="javascript:void(0)" onclick="showTab('login')">Login here</a></p>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="auth-benefits">
+                <h3>Why Join SlotCabin.org?</h3>
+                <ul>
+                    <li>🎁 5,000 free coins on registration</li>
+                    <li>🎮 Access to 10+ exciting games</li>
+                    <li>🏆 Compete on leaderboards</li>
+                    <li>🆕 New games added weekly</li>
+                    <li>💯 100% entertainment - no real money</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible Gaming — SlotCabin.org Social Gaming Platform</title>
+    <meta name="description" content="Learn about responsible gaming practices at SlotCabin.org. We promote safe, fun gaming with virtual coins only. Get help and resources for healthy gaming habits.">
+    <meta name="keywords" content="responsible gaming, safe gaming, gaming addiction help, gamcare, gambleaware, virtual coins, entertainment only, gaming support">
+    <link rel="canonical" href="https://slotcabin.org/responsible-gaming/">
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/legal.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../assets/logo.svg" alt="SlotCabin.org">
+                SlotCabin.org
+            </a>
+            <div class="nav-menu">
+                <a href="../games/index.html" class="nav-link">Games</a>
+                <a href="../contact/index.html" class="nav-link">Contact</a>
+                <div id="userInfo" class="user-info" style="display: none;">
+                    <span id="welcomeText">Welcome, User</span>
+                    <span id="coinBalance">5,000 Coins</span>
+                </div>
+                <div id="authButtons" class="auth-buttons">
+                    <a href="../login/index.html" class="btn-secondary">Login</a>
+                    <a href="../login/index.html" class="btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Responsible Gaming Content -->
+    <section class="legal-section">
+        <div class="container">
+            <div class="legal-content">
+                <h1>Responsible Gaming</h1>
+                <p class="last-updated">Your wellbeing is our priority</p>
+
+                <h2>Entertainment Only Platform</h2>
+                <p>SlotCabin.org is designed purely for entertainment purposes using virtual coins that have no real-world monetary value. Our platform does not involve real money gambling, betting, or any form of financial wagering. All games use virtual currency for fun and social competition only.</p>
+
+                <h2>Healthy Gaming Habits</h2>
+                <p>While our platform uses virtual coins, we encourage all users to maintain healthy gaming habits. Set time limits for your gaming sessions, take regular breaks, and remember that gaming should be a fun recreational activity, not a source of stress or compulsion.</p>
+
+                <h2>Age Verification</h2>
+                <p>Our platform is restricted to users aged 18 and older. We implement age verification measures to ensure compliance with this requirement and promote responsible access to our social gaming environment.</p>
+
+                <h2>Support Organizations</h2>
+                <div class="support-orgs">
+                    <div class="org-card" onclick="showSupportInfo('gamcare')">
+                        <img src="../assets/gamcare-logo.svg" alt="GamCare" class="org-logo">
+                        <h3>GamCare</h3>
+                        <p>Free, confidential advice and support for anyone affected by gambling problems</p>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                    
+                    <div class="org-card" onclick="showSupportInfo('gambleaware')">
+                        <img src="../assets/gambleaware-logo.svg" alt="GambleAware" class="org-logo">
+                        <h3>GambleAware</h3>
+                        <p>Leading charity in the UK committed to minimizing gambling-related harm</p>
+                        <button class="btn-secondary">Learn More</button>
+                    </div>
+                </div>
+
+                <h2>Warning Signs</h2>
+                <p>Even with virtual currency, it's important to recognize signs of problematic gaming behavior:</p>
+                <ul>
+                    <li>Spending excessive time gaming at the expense of other activities</li>
+                    <li>Feeling anxious or irritated when unable to play</li>
+                    <li>Gaming to escape problems or negative emotions</li>
+                    <li>Neglecting work, school, or relationships due to gaming</li>
+                    <li>Lying about time spent gaming</li>
+                </ul>
+
+                <h2>Getting Help</h2>
+                <p>If you or someone you know is experiencing problems with gaming habits, help is available. Contact professional support services, speak with a healthcare provider, or reach out to the organizations listed above for guidance and assistance.</p>
+
+                <h2>Our Commitment</h2>
+                <p>SlotCabin.org is committed to providing a safe, entertaining environment for social gaming. We continuously monitor our platform to ensure it remains focused on fun and social interaction rather than compulsive behavior. If you have concerns about our platform or suggestions for promoting responsible gaming, please contact us at info@slotcabin.org.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Info Modal -->
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('supportModal')">&times;</span>
+            <div id="supportContent">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SlotCabin.org</h3>
+                    <p>Social gaming platform for entertainment only</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy/index.html">Privacy Policy</a></li>
+                        <li><a href="../terms/index.html">Terms of Service</a></li>
+                        <li><a href="../cookies/index.html">Cookies Policy</a></li>
+                        <li><a href="../responsible-gaming/index.html">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@slotcabin.org</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlotCabin.org. All rights reserved. Entertainment only - No real money gambling.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/responsible-gaming.js"></script>
+
+    <style>
+    .support-orgs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .org-card {
+        background: var(--bg-dark);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        border: 2px solid rgba(0, 247, 255, 0.2);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .org-card:hover {
+        border-color: var(--neon-blue);
+        transform: translateY(-5px);
+    }
+
+    .org-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+        background: var(--neon-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 2rem;
+    }
+
+    .org-card h3 {
+        color: var(--neon-blue);
+        margin-bottom: 1rem;
+    }
+
+    .org-card p {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+    </style>
+</body>
+</html>

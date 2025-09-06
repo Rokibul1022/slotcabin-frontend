@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "username": "demo_user",
+    "email": "demo@slotcabin.org",
+    "coins": 5000,
+    "registrationDate": "2024-01-15T10:30:00Z",
+    "gamesPlayed": 0,
+    "totalScore": 0
+  }
+]
