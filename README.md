@@ -1,0 +1,1 @@
+# slotcabin-frontend
